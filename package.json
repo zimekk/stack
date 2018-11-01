@@ -54,6 +54,7 @@
     "precommit": "lint-staged",
     "lint": "lint-staged",
     "test": "cd packages/web && yarn test",
+    "deploy": "cd packages/web && yarn deploy",
     "clean": "rm -rf node_modules/ packages/*/node_modules/",
     "update": "yarn upgrade-interactive --latest"
   }

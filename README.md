@@ -5,5 +5,5 @@
 ## todo
 
 - [x] Embedding Status Images (https://docs.travis-ci.com/user/status-images/)
-- [ ] GitHub Pages Deployment (https://docs.travis-ci.com/user/deployment/pages/)
+- [x] GitHub Pages Deployment (https://facebook.github.io/create-react-app/docs/deployment#docsNav)
 - [ ] e2e testing (https://www.browserstack.com/test-on-microsoft-edge-browser#live-cloud)

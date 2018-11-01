@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "babel-jest": "23.6.0",
     "react-scripts": "2.1.1"
   },
   "dependencies": {

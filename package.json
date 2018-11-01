@@ -11,11 +11,11 @@
   "author": "Marcin Makarewicz <marcin@makarewicz.eu>",
   "license": "MIT",
   "devDependencies": {
-    "babel-eslint": "9.0.0",
+    "babel-eslint": "10.0.1",
     "eslint": "5.6.0",
-    "eslint-config-prettier": "false3.1.0",
+    "eslint-config-prettier": "3.1.0",
     "eslint-plugin-flowtype": "3.2.0",
-    "eslint-plugin-prettier": "false3.0.0",
+    "eslint-plugin-prettier": "3.0.0",
     "eslint-plugin-react": "7.11.1",
     "flow-bin": "0.85.0",
     "husky": "1.1.2",
@@ -53,6 +53,8 @@
   "scripts": {
     "precommit": "lint-staged",
     "lint": "lint-staged",
+    "test": "cd packages/web && yarn test",
+    "clean": "rm -rf node_modules/ packages/*/node_modules/",
     "update": "yarn upgrade-interactive --latest"
   }
 }

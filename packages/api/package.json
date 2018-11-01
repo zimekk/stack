@@ -1,0 +1,21 @@
+{
+  "name": "@stack/api",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {},
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "scripts": {
+    "start": "babel-node index.js"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0",
+    "@babel/node": "7.0.0",
+    "express": "4.16.4",
+    "express-graphql": "0.7.1",
+    "graphql": "14.0.2"
+  }
+}

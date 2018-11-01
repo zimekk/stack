@@ -1,0 +1,58 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {},
+  "name": "stack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/zimekk/stack",
+  "author": "Marcin Makarewicz <marcin@makarewicz.eu>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "9.0.0",
+    "eslint": "5.6.0",
+    "eslint-config-prettier": "false3.1.0",
+    "eslint-plugin-flowtype": "3.2.0",
+    "eslint-plugin-prettier": "false3.0.0",
+    "eslint-plugin-react": "7.11.1",
+    "flow-bin": "0.85.0",
+    "husky": "1.1.2",
+    "lint-staged": "8.0.4",
+    "prettier": "1.14.3",
+    "prettier-eslint": "8.8.2"
+  },
+  "prettier": {},
+  "eslintConfig": {
+    "extends": [
+      "prettier"
+    ],
+    "plugins": [
+      "flowtype",
+      "prettier"
+    ],
+    "parser": "babel-eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "lint": "lint-staged",
+    "update": "yarn upgrade-interactive --latest"
+  }
+}

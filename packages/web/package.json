@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
+    "@2fd/graphdoc": "2.4.0",
+    "graphql": "14.0.2",
+    "graphql-tag": "2.10.0",
+    "graphql-tools": "4.0.3",
     "react-scripts": "2.1.1"
   },
   "dependencies": {
@@ -14,8 +18,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "docs": "graphdoc -s ./schema.gql -o ./build/schema",
     "test": "react-scripts test",
-    "predeploy": "yarn build",
+    "predeploy": "yarn build && yarn docs",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },

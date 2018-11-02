@@ -1,0 +1,41 @@
+  type Query {
+    hello: String
+    messages: [Message]
+  }
+  type Contact {
+    id: String!
+    name: String!
+  }
+  input CreateContactInput {
+    name: String!
+  }
+  input UpdateContactInput {
+    id: String!
+    name: String!
+  }
+  input RemoveContactInput {
+    id: String!
+  }
+  type ContactOps {
+    create(input: CreateContactInput!): Contact
+    update(input: UpdateContactInput!): Contact
+    remove(input: RemoveContactInput!): Boolean
+  }
+  type Message {
+    text: String!
+  }
+  input MessageInput {
+    text: String!
+  }
+  type MessageOps {
+    add(input: MessageInput!): [Message]
+    clear: Boolean
+  }
+  type Mutation {
+    Contact: ContactOps
+    Message: MessageOps
+  }
+  schema {
+    query: Query
+    mutation: Mutation
+  }

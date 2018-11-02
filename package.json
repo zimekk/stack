@@ -12,6 +12,7 @@
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "10.0.1",
+    "concurrently": "4.0.1",
     "eslint": "5.6.0",
     "eslint-config-prettier": "3.1.0",
     "eslint-plugin-flowtype": "3.2.0",
@@ -51,6 +52,10 @@
     ]
   },
   "scripts": {
+    "start": "concurrently --kill-others-on-fail \"yarn start:api\" \"yarn start:web\"",
+    "start:api": "cd packages/api && yarn start",
+    "start:app": "cd packages/app && yarn start",
+    "start:web": "cd packages/web && yarn start",
     "precommit": "lint-staged",
     "lint": "lint-staged",
     "test": "cd packages/web && yarn test",

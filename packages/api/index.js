@@ -1,34 +1,39 @@
+import chokidar from 'chokidar';
 import express from "express";
-import graphqlHTTP from "express-graphql";
+import url from "url";
 
-import { buildSchema } from "graphql";
+import { proxy } from "@stack/web/package";
 
-const schema = buildSchema(`
-  type Query {
-    hello: String
-  }
-`);
-
-const root = {
-  hello: () => "Hello world!"
-};
+const { port, path } = url.parse(proxy);
 
 const app = express();
 
+const graphql = require.resolve('./graphql');
+
+// https://github.com/glenjamin/ultimate-hot-reloading-example/blob/master/server.js
+// https://medium.freecodecamp.org/how-to-make-create-react-app-work-with-a-node-backend-api-7c5c48acb1b0
+(dirname => {
+  const watcher = chokidar.watch(dirname);
+  watcher.on('ready', () => 
+   watcher.on('all', () => {
+     Object.keys(require.cache).filter(id => id.startsWith(dirname)).forEach(id => {
+       console.log(`Clearing require.cache ${id}`)
+       delete require.cache[id];
+     });
+   })
+ );
+})(require('path').dirname(graphql));
+
 app.use(
-  "/graphql",
-  graphqlHTTP({
-    schema: schema,
-    rootValue: root,
-    graphiql: true
-  })
+  path,
+  (...args) => require(graphql).default(...args)
 );
 
-const server = app.listen(4000, () =>
-  (({ address, port, ...rest }) =>
+const server = app.listen(port, () =>
+  (({ address, port }) =>
     console.log(
       `Server is running on http://${
         address === "::" ? "localhost" : address
-      }:${port}/graphql/`
+      }:${port}${path}`
     ))(server.address())
 );

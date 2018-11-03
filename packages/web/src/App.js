@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import PingPong from "./PingPong";
+import Chat from "./Chat";
 
 class App extends Component {
   render() {
@@ -20,7 +20,7 @@ class App extends Component {
           >
             GraphQL Schema
           </a>
-          <PingPong />
+          <Chat />
         </header>
       </div>
     );

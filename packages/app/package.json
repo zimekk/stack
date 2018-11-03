@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
+    "babel-plugin-macros": "2.4.2",
     "crna-make-symlinks-for-yarn-workspaces": "1.0.1",
+    "graphql-tag.macro": "2.0.0",
     "jest-expo": "27.0.0",
     "metro-bundler-config-yarn-workspaces": "1.0.3",
     "react-native-scripts": "1.14.0",
@@ -11,7 +13,7 @@
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "react-native-scripts start",
+    "start": "API=\"http://$(./scripts/ip.js):4000/api\" react-native-scripts start",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
@@ -21,7 +23,14 @@
   "jest": {
     "preset": "jest-expo"
   },
+  "babel": {
+    "plugins": [
+      "transform-inline-environment-variables",
+      "macros"
+    ]
+  },
   "dependencies": {
+    "babel-plugin-transform-inline-environment-variables": "0.4.3",
     "expo": "27.0.1",
     "react": "16.6.0",
     "react-native": "0.55"

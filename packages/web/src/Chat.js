@@ -13,7 +13,7 @@ const Message = ({ children }) => (
 
 const query = (query, value) => request('/api', print(query), value);
 
-export default class PingPong extends Component {
+export default class Chat extends Component {
   state = {
     counter: 1,
     messages: []

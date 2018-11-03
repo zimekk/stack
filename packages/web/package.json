@@ -6,6 +6,7 @@
     "@2fd/graphdoc": "2.4.0",
     "graphql": "14.0.2",
     "graphql-tag": "2.10.0",
+    "graphql-tag.macro": "2.0.0",
     "graphql-tools": "4.0.3",
     "react-scripts": "2.1.1"
   },

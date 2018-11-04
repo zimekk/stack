@@ -1,0 +1,24 @@
+# https://medium.com/@zbbergma/dockerizing-a-node-js-postgresql-app-backend-ac81750cf6df
+version: '2.1'
+services:
+    sql:
+        image: postgres:11-alpine
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=password
+            - POSTGRES_DB=stack
+        ports:
+            - 5432:5432
+    api:
+        build: .
+        depends_on:
+            - sql
+        environment:
+            - DATABASE_URL=postgres://postgres:password@sql:5432/stack
+        ports:
+            - 3000:3000
+            - 4000:4000
+        volumes:
+            - '.:/code'
+            - /code/node_modules
+        # command: /bin/sh

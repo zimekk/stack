@@ -8,7 +8,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/zimekk/stack",
-  "author": "Marcin Makarewicz <marcin@makarewicz.eu>",
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "10.0.1",
@@ -58,7 +57,7 @@
     "start:web": "cd packages/web && yarn start",
     "precommit": "lint-staged",
     "lint": "lint-staged",
-    "test": "yarn test:api && yarn test:web",
+    "test": "CI=true yarn test:api && yarn test:web",
     "test:api": "cd packages/api && yarn test",
     "test:web": "cd packages/web && yarn test",
     "deploy": "cd packages/web && yarn deploy",

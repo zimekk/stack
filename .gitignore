@@ -20,5 +20,6 @@ typings/
 # dotenv environment variables file
 #.env
 
+.ash_history
 .expo
 /packages/web/build

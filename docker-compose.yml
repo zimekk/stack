@@ -9,6 +9,8 @@ services:
             - POSTGRES_DB=stack
         ports:
             - 5432:5432
+        volumes:
+            - ./packages/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
     api:
         build: .
         depends_on:

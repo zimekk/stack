@@ -1,5 +1,6 @@
 type Query {
   hello: String
+  contacts: [Contact]
   messages: [Message]
 }
 type Contact {

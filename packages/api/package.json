@@ -3,16 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@stack/sql": "1.0.0",
     "@stack/web": "1.0.0",
     "chokidar": "2.0.4",
     "express": "4.16.4",
     "express-graphql": "0.7.1",
     "graphql": "14.0.2"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
   },
   "jest": {
     "testEnvironment": "node",
@@ -25,7 +21,7 @@
     ]
   },
   "scripts": {
-    "start": "babel-node index.js",
+    "start": "node -r @stack/env index.js",
     "test": "jest"
   },
   "devDependencies": {

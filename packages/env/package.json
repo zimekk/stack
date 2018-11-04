@@ -1,0 +1,11 @@
+{
+  "name": "@stack/env",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "7.1.2",
+    "@babel/node": "7.0.0",
+    "@babel/register": "7.0.0"
+  }
+}

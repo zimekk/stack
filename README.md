@@ -41,6 +41,7 @@ docker-compose run --rm sql
 ```sh
 docker ps
 docker exec -it stack_sql_1 su postgres
+docker exec -it stack_sql_1 su postgres -c "psql stack"
 ```
 
 ```sh
@@ -54,6 +55,7 @@ docker-compose run api sh
 https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
 
 ```sh
+docker-compose rm
 docker-compose down
 docker-compose kill
 docker system prune -a
@@ -67,10 +69,11 @@ docker system prune -a
 - [x] GraphQL Schema Documentation (https://zimekk.github.io/stack/schema/)
 - [x] API Server hot reloading (https://github.com/glenjamin/ultimate-hot-reloading-example)
 - [ ] Registration
-- [ ] Authorization
+- [ ] Authorization (https://blog.pusher.com/handling-authentication-in-graphql-auth0/)
 - [ ] Sending an e-mail
 - [ ] Session management
-- [ ] GraphQL Subscriptions
+- [ ] GraphQL Subscriptions (https://github.com/apollographql/graphql-subscriptions)
 - [ ] Instant notifications
-- [ ] Database usage
+- [x] Database usage (https://node-postgres.com/features/queries)
+- [ ] Sequelize usage (https://github.com/benawad/slack-clone-server/tree/4_resolvers)
 - [ ] E2E testing (https://www.browserstack.com/test-on-microsoft-edge-browser#live-cloud)

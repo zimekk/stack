@@ -35,13 +35,12 @@ docker exec -it stack_api_1 sh
 ```
 
 ```sh
-docker-compose run --rm sql
+docker-compose run --rm db
 ```
 
 ```sh
 docker ps
-docker exec -it stack_sql_1 su postgres
-docker exec -it stack_sql_1 su postgres -c "psql stack"
+docker exec -it stack_db_1 su postgres -c "psql stack"
 ```
 
 ```sh

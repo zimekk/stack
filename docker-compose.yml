@@ -1,7 +1,7 @@
 # https://medium.com/@zbbergma/dockerizing-a-node-js-postgresql-app-backend-ac81750cf6df
 version: '2.1'
 services:
-    sql:
+    db:
         image: postgres:11-alpine
         environment:
             - POSTGRES_USER=postgres
@@ -10,13 +10,13 @@ services:
         ports:
             - 5432:5432
         volumes:
-            - ./packages/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+            - ./packages/db/initdb.d:/docker-entrypoint-initdb.d
     api:
         build: .
         depends_on:
-            - sql
+            - db
         environment:
-            - DATABASE_URL=postgres://postgres:password@sql:5432/stack
+            - DATABASE_URL=postgres://postgres:password@db:5432/stack
         ports:
             - 3000:3000
             - 4000:4000

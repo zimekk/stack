@@ -1,15 +1,18 @@
 {
-  "name": "@stack/env",
+  "name": "@stack/sql",
   "version": "1.0.0",
   "private": true,
+  "dependencies": {
+    "@stack/env": "1.0.0",
+    "pg": "7.6.0"
+  },
   "devDependencies": {
-    "@babel/register": "7.0.0",
     "@babel/core": "7.1.2",
-    "@babel/preset-env": "7.1.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "23.6.0",
     "jest": "23.6.0"
   },
   "scripts": {
+    "test": "jest"
   }
 }

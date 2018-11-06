@@ -17,10 +17,15 @@ input UpdateContactInput {
 input RemoveContactInput {
   id: String!
 }
+input NotifyContactInput {
+  subject: String!
+  message: String!
+}
 type ContactOps {
   create(input: CreateContactInput!): Contact
   update(input: UpdateContactInput!): Contact
   remove(input: RemoveContactInput!): Boolean
+  notify(input: NotifyContactInput!): Boolean
 }
 type Message {
   text: String!

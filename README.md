@@ -69,7 +69,7 @@ docker system prune -a
 - [x] API Server hot reloading (https://github.com/glenjamin/ultimate-hot-reloading-example)
 - [ ] Registration
 - [ ] Authorization (https://blog.pusher.com/handling-authentication-in-graphql-auth0/)
-- [ ] Sending an e-mail
+- [x] Sending an e-mail (https://nodemailer.com/about/)
 - [ ] Session management
 - [ ] GraphQL Subscriptions (https://github.com/apollographql/graphql-subscriptions)
 - [ ] Instant notifications

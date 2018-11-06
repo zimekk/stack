@@ -16,13 +16,13 @@ const graphql = require.resolve('./graphql');
   const watcher = chokidar.watch(dirnames);
   watcher.on('ready', () => 
    watcher.on('all', () => {
-     Object.keys(require.cache).filter(id => !id.match(/node_modules/) && console.log(['filter', id, dirnames]) || dirnames.find(dirname => id.startsWith(dirname))).forEach(id => {
+     Object.keys(require.cache).filter(id => !id.match(/node_modules/) && dirnames.find(dirname => id.startsWith(dirname))).forEach(id => {
        console.log(`Clearing require.cache ${id}`)
        delete require.cache[id];
      });
    })
  );
-})([graphql, require.resolve('@stack/sql')].map(path => require('path').dirname(path)));
+})([graphql, require.resolve('@stack/sql'), require.resolve('@stack/web/schema.gql')].map(path => require('path').dirname(path)));
 
 app.use(
   path,

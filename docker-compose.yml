@@ -17,6 +17,9 @@ services:
             - db
         environment:
             - DATABASE_URL=postgres://postgres:password@db:5432/stack
+            - SMTP_URL=smtp://username:password@smtp.ethereal.email/
+            - MAIL_FROM="Fred Foo" <foo@example.com>"
+            - MAIL_TO=bar@example.com, baz@example.com
         ports:
             - 3000:3000
             - 4000:4000

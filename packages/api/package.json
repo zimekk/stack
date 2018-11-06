@@ -4,12 +4,13 @@
   "private": true,
   "dependencies": {
     "@stack/env": "1.0.0",
-    "@stack/web": "1.0.0",
     "@stack/sql": "1.0.0",
+    "@stack/web": "1.0.0",
     "chokidar": "2.0.4",
     "express": "4.16.4",
     "express-graphql": "0.7.1",
-    "graphql": "14.0.2"
+    "graphql": "14.0.2",
+    "nodemailer": "4.6.8"
   },
   "scripts": {
     "start": "node -r @stack/env index.js",

@@ -1,29 +1,29 @@
 # https://medium.com/@zbbergma/dockerizing-a-node-js-postgresql-app-backend-ac81750cf6df
-version: '2.1'
+# https://docs.docker.com/compose/environment-variables/#the-env-file
+version: '3'
 services:
-    db:
-        image: postgres:11-alpine
-        environment:
-            - POSTGRES_USER=postgres
-            - POSTGRES_PASSWORD=password
-            - POSTGRES_DB=stack
-        ports:
-            - 5432:5432
-        volumes:
-            - ./packages/db/initdb.d:/docker-entrypoint-initdb.d
-    api:
-        build: .
-        depends_on:
-            - db
-        environment:
-            - DATABASE_URL=postgres://postgres:password@db:5432/stack
-            - SMTP_URL=smtp://username:password@smtp.ethereal.email/
-            - MAIL_FROM="Fred Foo" <foo@example.com>"
-            - MAIL_TO=bar@example.com, baz@example.com
-        ports:
-            - 3000:3000
-            - 4000:4000
-        volumes:
-            - '.:/code'
-            - /code/node_modules
-        # command: /bin/sh
+  api:
+    build: .
+    depends_on:
+      - db
+    environment:
+    - DATABASE_URL=postgres://postgres:password@db:5432/stack
+    - MAIL_FROM
+    - MAIL_TO
+    - SMTP_URL
+    ports:
+    - 3000:3000
+    - 4000:4000
+    volumes:
+    - .:/code
+    - /code/node_modules
+  db:
+    image: postgres:11-alpine
+    environment:
+      POSTGRES_DB: stack
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+    ports:
+    - 5432:5432
+    volumes:
+    - ./packages/db/initdb.d:/docker-entrypoint-initdb.d

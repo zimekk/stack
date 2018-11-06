@@ -21,6 +21,18 @@ docker-compose up
 ```
 
 ```sh
+cat .env
+docker-compose config
+
+export SMTP_URL='smtp://username:password@smtp.ethereal.email/' && \
+export MAIL_FROM='"Fred Foo" <foo@example.com>' && \
+export MAIL_TO='bar@example.com, baz@example.com'
+docker-compose config
+
+unset SMTP_URL MAIL_FROM MAIL_TO
+```
+
+```sh
 docker-compose build
 docker-compose run --rm api
 ```

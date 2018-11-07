@@ -2,37 +2,30 @@
   "name": "@stack/app",
   "version": "1.0.0",
   "private": true,
-  "devDependencies": {
-    "babel-plugin-macros": "2.4.2",
-    "crna-make-symlinks-for-yarn-workspaces": "1.0.1",
-    "graphql-tag.macro": "2.0.0",
-    "jest-expo": "27.0.0",
-    "metro-bundler-config-yarn-workspaces": "1.0.3",
-    "react-native-scripts": "1.14.0",
-    "react-test-renderer": "16.6.0"
-  },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "API=\"http://$(./scripts/ip.js):4000/api\" react-native-scripts start",
-    "eject": "react-native-scripts eject",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios",
+    "start": "API=http://$(./scripts/ip.js):4000/api expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "eject": "expo eject",
     "test": "jest",
-    "prestart": "node link-workspaces.js"
+    "prestart": "if [[ ! -h node_modules/react-native ]]; then ln -sf ../../../node_modules/react-native node_modules/react-native; fi && if [[ ! -h node_modules/expo ]]; then ln -sf ../../../node_modules/expo node_modules/expo; fi"
   },
   "jest": {
     "preset": "jest-expo"
   },
-  "babel": {
-    "plugins": [
-      "transform-inline-environment-variables",
-      "macros"
-    ]
-  },
   "dependencies": {
+    "@expo/samples": "2.1.1",
+    "babel-plugin-macros": "2.4.2",
     "babel-plugin-transform-inline-environment-variables": "0.4.3",
-    "expo": "27.0.1",
-    "react": "16.6.0",
-    "react-native": "0.55"
+    "expo": "31.0.4",
+    "react": "16.5.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+    "react-navigation": "2.18.2"
+  },
+  "devDependencies": {
+    "babel-preset-expo": "5.0.0",
+    "expo-cli": "2.3.5",
+    "jest-expo": "31.0.0"
   }
 }

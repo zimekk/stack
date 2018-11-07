@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 
-// import { print } from "graphql";
+import { print } from "graphql";
 import { request } from "graphql-request";
-// import gql from 'graphql-tag.macro';
+import gql from "graphql-tag.macro";
 
 const Message = ({ children }) => <Text>{children}</Text>;
-
-const gql = str => str.join("");
-const print = query => query;
 
 // https://medium.com/@skiptomyhue/setting-up-environment-variables-for-react-native-builds-b66a2576a218
 const API = process.env.API || "http://localhost:3000/api";
@@ -68,6 +65,7 @@ export default class Chat extends Component {
     const { counter, messages } = this.state;
     return (
       <View style={styles.container}>
+        <Text>{`API: ${process.env.API}`}</Text>
         <Button
           onPress={() => this.onSend()}
           title={`Create message #${counter}`}

@@ -9,12 +9,13 @@
     "ios": "expo start --ios",
     "eject": "expo eject",
     "test": "jest",
-    "prestart": "if [[ ! -h node_modules/react-native ]]; then ln -sf ../../../node_modules/react-native node_modules/react-native; fi && if [[ ! -h node_modules/expo ]]; then ln -sf ../../../node_modules/expo node_modules/expo; fi"
+    "prestart": "if [ ! -h node_modules/react-native ]; then ln -sf ../../../node_modules/react-native node_modules/react-native; fi && if [ ! -h node_modules/expo ]; then ln -sf ../../../node_modules/expo node_modules/expo; fi"
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@babel/runtime": "7.1.5",
     "@expo/samples": "2.1.1",
     "babel-plugin-macros": "2.4.2",
     "babel-plugin-transform-inline-environment-variables": "0.4.3",
@@ -24,6 +25,7 @@
     "react-navigation": "2.18.2"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "7.1.0",
     "babel-preset-expo": "5.0.0",
     "expo-cli": "2.3.8",
     "jest-expo": "31.0.0"

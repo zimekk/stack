@@ -9,7 +9,7 @@
     "chokidar": "2.0.4",
     "express": "4.16.4",
     "express-graphql": "0.7.1",
-    "nodemailer": "4.6.8"
+    "nodemailer": "4.7.0"
   },
   "scripts": {
     "start": "node -r @stack/env index.js",

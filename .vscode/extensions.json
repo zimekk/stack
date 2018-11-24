@@ -1,0 +1,19 @@
+{
+  // See http://go.microsoft.com/fwlink/?LinkId=827846
+  // for the documentation about the extensions.json format
+  "recommendations": [
+    // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+    "msjsdiag.debugger-for-chrome", // Debugger for Chrome
+    "alexkrechik.cucumberautocomplete", // Cucumber Full Language Support
+    "peterjausovec.vscode-docker", // Docker
+    "dbaeumer.vscode-eslint", // ESLint
+    "flowtype.flow-for-vscode", // Flow Language Support
+    "eamodio.gitlens", // GitLens — Git supercharged
+    "kumar-harsh.graphql-for-vscode", // GraphQL for VSCode
+    "eg2.vscode-npm-script", // npm
+    "esbenp.prettier-vscode", // Prettier - Code formatter
+    "davidanson.vscode-markdownlint", // markdownlint
+    "christian-kohler.npm-intellisense", // npm Intellisense
+    "vsmobile.vscode-react-native" // React Native Tools
+  ]
+}

@@ -64,7 +64,6 @@
     }
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap --hoist",
     "start": "concurrently --kill-others-on-fail \"yarn start:api\" \"yarn start:web\"",
     "start:api": "lerna run --scope @stack/api start --stream",
     "start:app": "lerna run --scope @stack/app start --stream",

@@ -9,16 +9,19 @@
     "chokidar": "2.0.4",
     "express": "4.16.4",
     "express-graphql": "0.7.1",
-    "nodemailer": "4.7.0"
+    "nodemailer": "5.1.1"
+  },
+  "jest": {
+    "preset": "@stack/env"
   },
   "scripts": {
     "start": "node -r @stack/env index.js",
     "test": "jest"
   },
   "devDependencies": {
-    "@babel/core": "7.1.6",
+    "@babel/core": "7.2.2",
     "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "23.6.0",
-    "jest": "23.6.0"
+    "babel-jest": "24.0.0",
+    "jest": "24.0.0"
   }
 }

@@ -4,13 +4,13 @@
   "private": true,
   "dependencies": {
     "@stack/env": "1.0.0",
-    "pg": "7.6.1"
+    "pg": "7.8.0"
   },
   "devDependencies": {
-    "@babel/core": "7.1.6",
+    "@babel/core": "7.2.2",
     "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "23.6.0",
-    "jest": "23.6.0"
+    "babel-jest": "24.0.0",
+    "jest": "24.0.0"
   },
   "scripts": {
     "test": "jest"
